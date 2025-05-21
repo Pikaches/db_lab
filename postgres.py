@@ -17,7 +17,7 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 
 try:
-    # Таблица University
+    # Table University
     cur.execute("""
         CREATE TABLE IF NOT EXISTS University (
             id SERIAL PRIMARY KEY,
@@ -25,7 +25,7 @@ try:
             location VARCHAR(100))
     """)
 
-    # Таблица Institute
+    # Table Institute
     cur.execute("""
         CREATE TABLE IF NOT EXISTS Institute (
             id SERIAL PRIMARY KEY,
@@ -33,7 +33,7 @@ try:
             university_id INTEGER REFERENCES University(id))
     """)
 
-    # Таблица Department
+    # Table Department
     cur.execute("""
         CREATE TABLE IF NOT EXISTS Department (
             id SERIAL PRIMARY KEY,
@@ -41,7 +41,7 @@ try:
             institute_id INTEGER REFERENCES Institute(id))
     """)
 
-    # Таблица Specialty
+    # Table Specialty
     cur.execute("""
         CREATE TABLE IF NOT EXISTS Specialty (
             id SERIAL PRIMARY KEY,
@@ -49,7 +49,7 @@ try:
             department_id INTEGER REFERENCES Department(id))
     """)
 
-    # Таблица St_group
+    # Table St_group
     cur.execute("""
         CREATE TABLE IF NOT EXISTS St_group (
             id SERIAL PRIMARY KEY,
