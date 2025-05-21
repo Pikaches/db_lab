@@ -1,3 +1,5 @@
 MATCH (c:Course {postgres_id:1}) MERGE (l:Lecture {postgres_id:1}) SET l.name="Кинематика точки" MERGE (c)-[:INCLUDES_LECTURE]->(l)
 MATCH (l:Lecture {postgres_id:1}), (g:Group {postgres_id:14}) MERGE (e:ScheduleEvent {postgres_id:1}) SET e.date = date(datetime({epochmillis: 1693558800000000 / 1000})) MERGE (g)-[:SCHEDULED_FOR]->(e) MERGE (e)-[:OF_LECTURE]->(l)
 MATCH (st:Student {postgres_id:1}),(e:ScheduleEvent {postgres_id:1}) MERGE (st)-[a:ATTENDED]->(e) SET a.attended=true,a.updated=1
+
+Kafka sync is not properly working with neo4j so that's the querries that is working fine but still is not working with kafka
