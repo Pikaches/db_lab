@@ -75,5 +75,8 @@ Contributions are welcome! 👋 To contribute, follow these steps:
 3. Create a pull request and describe your changes 📝
 * Follow the code style and standards guide 📊
 
+# To do
+Soon will upload Dockerfiles for lab1, lab2, lab3 and gateway services
+
 # License Information
 This project is licensed under the MIT License 📜. You are free to use, modify, and distribute the project as you see fit, but please provide attribution and mention the original authors 🎉
