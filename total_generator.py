@@ -39,13 +39,11 @@ NEO4J_PASSWORD = 'strongpassword'
 
 
 if __name__ == "__main__":
-    #postgres_generator.insert_data()
+    postgres_generator.insert_data()
     random_attendance_generator.generate_students_and_attendance(cur, students_per_group=10)
     conn.commit()
-    #service = neo4j_sync.SyncService(PG_CONFIG, NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
-    
-    #service.run_all()
-    
-    #mongo_sync.sync_postgres_to_mongo()
-    #redis_sync.sync_students_to_redis()
-    #elastic_gen_sync.generate_and_sync_lecture_materials()
+    service = neo4j_sync.SyncService(PG_CONFIG, NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
+    service.run_all()
+    mongo_sync.sync_postgres_to_mongo()
+    redis_sync.sync_students_to_redis()
+    elastic_gen_sync.generate_and_sync_lecture_materials()
