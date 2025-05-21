@@ -31,6 +31,16 @@ To get started, follow these steps:
 4. Configure the databases and Kafka settings as needed 🔧
 5. Feel free to change databases passwords and my JWT token for auth but don't forget - auth by itself is required 🔧
 
+# Kafka Setuo
+To create connectors, follow this instruction:
+
+1. It's important to firstly create tables before sending any connectors!
+2. Go to `Debezium.txt` and copy-paste commands to post connctors(if you want to discover them - just open needed json)
+3. Insert data
+4. See magic
+IMPORTANT: if you want to configure it on your database - don't forget to install needed connector class on docker-compose.yml and provide valid JSON.
+
+
 # Usage Examples
 To use the project, follow these basic steps:
 
