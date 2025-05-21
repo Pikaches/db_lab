@@ -84,6 +84,7 @@ To use labs full functionally
 
 # Labs info
 Info about what every lab is doing
+
 **Lab 1: Student Attendance Report**
 Objective: Retrieve a report on the 10 students with the lowest lecture attendance percentage for a given term or phrase within a specified academic period.
 Output includes:
