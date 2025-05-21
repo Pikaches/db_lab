@@ -1,0 +1,28 @@
+psql -d postgres_db -p 5432 -U postgres_user -W - подключиться по паролю postgres_password
+psql -U postgres_user -d postgres_db -c "SHOW shared_preload_libraries;"
+
+
+ALTER PUBLICATION dbz_publication ADD TABLE public.university;
+
+
+docker exec -it broker bash -c "kafka-console-consumer --bootstrap-server broker:29092 --topic postgres_server.public.university --from-beginning --timeout-ms 10000"
+
+
+curl -X POST http://localhost:8083/connectors -H "Content-Type: application/json" -d @elastic_sink.json
+
+curl -s http://localhost:8083/connectors/elastic-sink-lectures-only/status | jq .
+curl -X DELETE http://localhost:8083/connectors/elastic-sink-lectures-only
+
+
+
+docker exec -it kafka-connect bash -c "confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:16.4.0"
+
+
+
+docker exec broker bash -c "kafka-console-consumer --bootstrap-server broker:9092 --topic postgres_server.public.students --from-beginning --max-messages 2 --formatter 'value=io.debezium.tools.StringConverter'"
+
+
+
+curl -u elastic:secret -X GET "http://elasticsearch:9200/_cat/indices?v&h=index,docs.count"
+
+docker exec -it mongodb mongosh "mongodb://admin:secret@localhost:27017/university_db" --eval 'db.universities.find().pretty()'
