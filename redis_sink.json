@@ -1,0 +1,13 @@
+{
+  "name": "redis-sink-connector",
+  "config": {
+    "connector.class": "com.github.jcustenborder.kafka.connect.redis.RedisSinkConnector",
+    "topics": "postgres_server.public.students",
+    "redis.hosts": "redis:6379",
+    "redis.command": "SET",
+    "redis.key.expression": "student:${key}",
+    "behavior.on.null.values": "delete",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter"
+  }
+}
