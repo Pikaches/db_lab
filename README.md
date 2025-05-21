@@ -44,7 +44,7 @@ IMPORTANT: if you want to configure it on your database - don't forget to instal
 # Usage Examples
 To use the project, follow these basic steps:
 
-1. Start the containers using `docker-compose up` ⏱️
+1. Start the containers using `docker-compose up` (but first, see *Lab building* part) ⏱️
 2. Run the Python scripts to start syncing data 💡
 3. Use the command-line interface to monitor and control the syncing process ⏱️
 4. use `postgres.py` to generate table structure on PostgreSQL
@@ -75,8 +75,42 @@ Contributions are welcome! 👋 To contribute, follow these steps:
 3. Create a pull request and describe your changes 📝
 * Follow the code style and standards guide 📊
 
-# To do
-Soon will upload Dockerfiles for lab1, lab2, lab3 and gateway services
+# Labs building
+To use labs full functionally
+1. Go straight to every lab directory that you want to build
+2. Use `docker build lab{num}_app .` to build up lab containers(use whatever lab number instead of num).
+3. Use `docker build gateway_app .` to build gateway.
+4. create a db_network by yourself using `docker network create`
+
+# Labs info
+Info about what every lab is doing
+**Lab 1: Student Attendance Report**
+Objective: Retrieve a report on the 10 students with the lowest lecture attendance percentage for a given term or phrase within a specified academic period.
+Output includes:
+
+1. Full student details
+2. Attendance percentage
+3. Reporting period
+4. Matching course term/phrase
+
+**Lab 2: Classroom Capacity Planning**
+Objective: Calculate the required classroom capacity for a given course (semester/year), accounting for technical equipment requirements.
+Output includes:
+
+1. Full course and lecture details
+2. Number of enrolled students
+
+**Lab 3: Group Lecture Hours Analysis**
+Objective: Generate a report for a specific student group, comparing attended vs. planned lecture hours across all courses tagged as department-specific disciplines.
+Notes:
+
+1. 1 lecture = 2 academic hours
+2. Only tagged lectures are included
+
+Output includes:
+
+1. Group, student, and course details
+2. Planned vs. attended hours
 
 # License Information
 This project is licensed under the MIT License 📜. You are free to use, modify, and distribute the project as you see fit, but please provide attribution and mention the original authors 🎉
