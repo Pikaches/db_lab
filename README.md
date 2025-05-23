@@ -78,8 +78,8 @@ Contributions are welcome! 👋 To contribute, follow these steps:
 # Labs building
 To use labs full functionally
 1. Go straight to every lab directory that you want to build
-2. Use `docker build lab{num}_app .` to build up lab containers(use whatever lab number instead of num).
-3. Use `docker build gateway_app .` to build gateway.
+2. Use `docker build -t lab{num}_app .` to build up lab containers(use whatever lab number instead of num).
+3. Use `docker build -t gateway_app .` to build gateway.
 4. create a db_network by yourself using `docker network create`
 
 # Labs info
