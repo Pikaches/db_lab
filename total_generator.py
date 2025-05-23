@@ -39,7 +39,6 @@ NEO4J_PASSWORD = 'strongpassword'
 
 
 if __name__ == "__main__":
-    postgres_generator.insert_data()
     random_attendance_generator.generate_students_and_attendance(cur, students_per_group=10)
     conn.commit()
     service = neo4j_sync.SyncService(PG_CONFIG, NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
