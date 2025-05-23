@@ -1,4 +1,4 @@
-# curl auth command: curl -X POST http://localhost:5000/auth/login -H "Content-Type: application/json" -d @credentials.json
+# curl auth command: curl -X POST http://localhost:5000/auth/login -H "Content-Type: application/json" -d @auth.json
 from flask import Flask, request, jsonify
 from flask_jwt_extended import (
     JWTManager, create_access_token, jwt_required, get_jwt_identity
