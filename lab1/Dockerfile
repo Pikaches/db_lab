@@ -2,9 +2,15 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
+COPY const.py .
+
+COPY lecture_session.py .
+
+COPY session_type_search.py .
+
 COPY app.py .
 
-COPY Lab1.py .
+COPY lab.py .
 
 COPY requirements.txt .
 

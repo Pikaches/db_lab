@@ -1,0 +1,10 @@
+pgdata
+neo4j_data
+neo4j_import
+neo4j_logs
+redis_data
+lecture_materials
+mongodb_data
+postgres-init
+elastic_data
+__pycache__

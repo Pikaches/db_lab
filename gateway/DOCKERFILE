@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY gateway.py .
 
+COPY const.py .
+
 COPY requirements.txt .
 
 RUN pip install -r requirements.txt
